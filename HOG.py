@@ -2,12 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-'''
-Do not change the input/output of each function, and do not remove the provided functions.
-'''
-
 def get_differential_filter():
-    # To do
     # Using Prewitt Filter.
     filter_x = np.array([[1,0,-1],
                          [1,0,-1],
@@ -19,7 +14,6 @@ def get_differential_filter():
 
 
 def filter_image(im, filter):
-    # To do
     ## Pad the image according to the filter size.
     # Get filter size
     k = filter.shape[0]    # Assumed that the pad will always be odd.
@@ -42,7 +36,6 @@ def filter_image(im, filter):
 
 
 def get_gradient(im_dx, im_dy):
-    # To do
     # Go to pixels in the image and replace with the magnitute.
     m,n = im_dx.shape
     # Make placeholder np arrays.
@@ -62,7 +55,6 @@ def get_gradient(im_dx, im_dy):
 
 
 def build_histogram(grad_mag, grad_angle, cell_size):
-    # To do
     # Get the size of histogram that will be formed, enges that are not in this size will be truncated.
     M = grad_mag.shape[0]//cell_size
     N = grad_mag.shape[1]//cell_size
@@ -89,7 +81,6 @@ def build_histogram(grad_mag, grad_angle, cell_size):
 
 
 def get_block_descriptor(ori_histo, block_size):
-    # To do
     M,N,d = ori_histo.shape
     ori_histo_normalized = np.zeros((M - block_size + 1, N - block_size + 1, d*block_size*block_size))
 
@@ -155,7 +146,6 @@ def visualize_hog(im, hog, cell_size, block_size):
 
 
 def face_recognition(I_target, I_template):
-    # To do
     M, N = I_target.shape
     m, n = I_template.shape
     # Initialize bounding box array.
